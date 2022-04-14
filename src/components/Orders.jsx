@@ -17,7 +17,7 @@ const Orders = ({users}) => {
 
 
     useEffect(() => {
-        fetch(`https://nc-marketplace-api.herokuapp.com/api/users/${username}/orders`).then((res) => {
+        fetch(`https://tradeoff-api.herokuapp.com/api/users/${username}/orders`).then((res) => {
             return res.json()
         }).then((res) => {
             setOrders(res.items)

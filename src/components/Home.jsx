@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({categories}) => {
   return (
-    <div>
-      <h1>Home</h1>
-      <p>Home content goes here:</p>
+    <div className="home">
+      <h1 className="home-title">Home</h1>
+      <h4 className="home-desc">Check out some of our most popular categories!</h4>
+      <ul className="category-list">
+            {categories && categories.map(category => {
+                return (
+                    <li className="category-item" key={category.category_name}>{category.category_name}</li>
+                )
+            })}
+        </ul>
     </div>
   )
 }

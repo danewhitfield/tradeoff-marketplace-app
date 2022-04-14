@@ -16,7 +16,7 @@ function App() {
 
   // USERS
   useEffect(() => {
-    fetch("https://nc-marketplace-api.herokuapp.com/api/users")
+    fetch("https://tradeoff-api.herokuapp.com/api/users")
       .then((res) => {
         return res.json();
       })
@@ -27,7 +27,7 @@ function App() {
 
   // CATEGORIES
   useEffect(() => {
-    fetch("https://nc-marketplace-api.herokuapp.com/api/categories")
+    fetch("https://tradeoff-api.herokuapp.com/api/categories")
       .then((res) => {
         return res.json();
       })
@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home categories={categories} />} />
         <Route
           path="/categories"
           element={

@@ -49,6 +49,12 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
   font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.add-item-btn:hover {
+  transform: scale(1.04);
 }
 
 .navbar {
@@ -68,6 +74,7 @@ body {
 
 .nav-item {
   margin: 0 10px;
+  transition: color 0.3s ease;
 }
 
 .logo {
@@ -176,6 +183,48 @@ ul {
   color: var(--main-bg-color);
 }
 
+.item-amount {
+  color: var(--main-bg-color);
+}
+
+.show-modal {
+  position: absolute;
+  right: 90px;
+  top: 110px;
+}
+
+.add-item-icon {
+  font-size: 40px;
+  color: rgb(0, 187, 0);
+}
+
+.add-new-item-btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  transition: transform 0.3s ease-in-out;
+  border: none;
+}
+
+.add-new-item-btn:hover {
+  transform: scale(1.1);
+}
+
+.add-new-item-btn:hover::before {
+  content: "List a new item!";
+  position: absolute;
+  left: -130px;
+  top: 0;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 3px solid rgba(0, 0, 0, 0.095);
+  padding: 5px;
+}
+
 .user-img {
   width: 150px;
   border-radius: 50%;
@@ -185,4 +234,40 @@ ul {
 .nav-item:focus,
 .nav-item:hover {
   color: var(--main-bg-color);
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.category-item {
+  background-color: #fff;
+  width: 250px;
+  height: 250px;
+  color: #333;
+  margin: 42px 10px;
+  background-color: #fff;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.323);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.category-item:hover {
+  transform: scale(1.06);
+  cursor: pointer;
+}
+
+.home {
+  height: 100vh;
 }

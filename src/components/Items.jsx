@@ -6,7 +6,7 @@ const Items = ({categories}) => {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    fetch("https://nc-marketplace-api.herokuapp.com/api/items")
+    fetch("https://tradeoff-api.herokuapp.com/api/items")
       .then((res) => {
         return res.json();
       })
@@ -18,9 +18,11 @@ const Items = ({categories}) => {
   if (items)
     return (
       <div className="items-container">
-        <AddItem items={items} setItems={setItems} categories={categories} />
-        <h1>Items</h1>
-        <p>Total Items: {items.length}</p>
+        <div className="add-item-container">
+          <AddItem items={items} setItems={setItems} categories={categories} />
+        </div>
+        <h1>Shop</h1>
+        <p>Showing <span className="item-amount">{items.length}</span> items on this page.</p>
 
         <div>
           <ul className="items">
